@@ -20,6 +20,15 @@
 };
 
 / {
+    behaviors {
+        td0: td0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD0";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+        };
+    };
+
 //组合键定义
     macros {
         menu_LS_F10: menu_LS_F10 {
@@ -69,149 +78,6 @@
         };
     };
 
-//不同按键行为导致的背光变化
-    macros {
-//按修饰键时亮度增加
-        ctrl_pink_bri: ctrl_pink_bri {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(340 ,80,35)>
-                , <&macro_pause_for_release>
-                , <&macro_release &kp LCTRL>
-                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
-                ;
-        };
-        shift_pink_bri: shift_pink_bri {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHIFT>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(340 ,80,35)>
-                , <&macro_pause_for_release>
-                , <&macro_release &kp LSHIFT>
-                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
-                ;
-        };
-        gui_pink_bri: gui_pink_bri {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LGUI>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(340 ,80,35)>
-                , <&macro_pause_for_release>
-                , <&macro_release &kp LGUI>
-                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
-                ;
-        };
-        alt_pink_bri: alt_pink_bri {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp RALT>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(340 ,80,35)>
-                , <&macro_pause_for_release>
-                , <&macro_release &kp RALT>
-                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
-                ;
-        };
-//切layer1背光变黄色
-        layer1_yellow: layer1_yellow {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &mo 1>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(20,100,30)>
-                , <&macro_pause_for_release>
-                , <&macro_release &mo 1>
-                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
-                ;
-        };
-//切layer2变浅绿
-        layer2_green: layer2_green {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &mo 1>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(55,65,20)>
-                , <&macro_pause_for_release>
-                , <&macro_release &mo 1>
-                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
-                ;
-        };
-//切layer3变白光
-        layer3_white: layer3_white {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &mo 1>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(55,0,20)>
-                , <&macro_pause_for_release>
-                , <&macro_release &mo 1>
-                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
-                ;
-        };
-//系统重置变红光
-        sys_reset_red: sys_reset_red {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &sys_reset>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(360,100,20)>
-                , <&macro_pause_for_release>
-                , <&macro_release &sys_reset>
-                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
-                ;
-        };
-        bootloader_red: bootloader_red {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &bootloader>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(360,100,20)>
-                , <&macro_pause_for_release>
-                , <&macro_release &bootloader>
-                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
-                ;
-        };
-//清空蓝牙变淡红光
-        btclrall_red: btclrall_red {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &bt BT_CLR_ALL>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(360,90,25)>
-                , <&macro_pause_for_release>
-                , <&macro_release &bt BT_CLR_ALL>
-                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
-                ;
-        };
-//大写锁定开启时背光粉色加深??? 用toggle?
-/*
-        caps_pink_sai: caps_pink_sai {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp CAPS,&rgb_ug RGB_COLOR_HSB(335 ,95,30)>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(360,90,25)>
-                , <&macro_pause_for_release>
-                , <&macro_release &bt BT_CLR_ALL>
-                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
-                ;
-        };
-*/
-//可以不用宏定义的组合键定义
-    behaviors {
-        td0: td0 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD0";
-            #binding-cells = <0>;
-            bindings = <&shift_pink_bri>, <&kp CAPS>;
-        };
-    };
-
-//正式键盘布局
     keymap {
         compatible = "zmk,keymap";
 
@@ -220,16 +86,15 @@
 
             // --------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | SHFT+CAPS |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  "   | 
+            // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  "   | 
             // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |  \   |
             //                    | GUI | LWL | SPC |   | L3+EBTER | LAYER2| RALT |
 
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0            &kp A  &kp S  &kp D     &kp F  &kp G          &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp DQT
-&ctrl_pink_bri  &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
-            &gui_pink_bri  &layer1_yellow  &kp SPACE          &lt 3 ENTER  &layer2_green   &alt_pink_bri
-             //&gui_pink_bri  &layer1_yellow  &kp SPACE          &lt layer3_white ENTER  &layer2_green   &alt_pink_bri
+&kp TAB     &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&td0        &kp A  &kp S  &kp D     &kp F  &kp G          &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp DQT
+&kp LCTRL   &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
+                         &kp LGUI  &mo 1  &kp SPACE      &lt 3 ENTER  &mo 2   &kp RALT
             >;
         };
 
@@ -260,7 +125,7 @@
             //                    | ESC | INS | SPACE |      |OUT_BLE|       |OUT_USB|
 
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp LBKT   &kp RBKT                   &rgb_ug RGB_COLOR_HSB(340 ,80,40)  &rgb_ug RGB_COLOR_HSB(335,75,15)  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI
+&trans  &kp N1  &kp N2  &kp N3  &kp LBKT   &kp RBKT                   &rgb_ug RGB_COLOR_HSB(380,100,40)  &rgb_ug RGB_COLOR_HSB(300,80,40)  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI
 &trans  &kp N4  &kp N5  &kp N6  &kp N0     &resource_WIN_E            &rgb_ug RGB_EFR                  &rgb_ug RGB_EFF  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI
 &trans  &kp N7  &kp N8  &kp N9  &kp EQUAL  &task_LC_LS_ESC            &bt BT_SEL 0                     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &bt BT_CLR
                      &kp ESC  &kp INS  &kp SPACE                      &out OUT_BLE                     &trans           &out OUT_USB
@@ -277,10 +142,10 @@
             //                      | GUI  |SCRLK  |        |      |&trans|      |Alt|
 
             bindings = <
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &sys_reset_red     &kp C_BRI_DN  &kp C_BRI_UP  &kp C_MUTE  &kp C_VOL_DN    &kp C_VOL_UP       &connect_WIN_K
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &bootloader_red    &bootloader_red   &none        &kp C_PP     &kp C_PREV      &kp C_NEXT         &lock_WIN_L
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp PAUSE_BREAK    &none      &btclrall_red   &none        &none           &ext_power EP_OFF  &ext_power EP_ON
-                 &kp LGUI  &kp SLCK        &none              &trans       &trans       &kp RALT
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &sys_reset         &kp C_BRI_DN  &kp C_BRI_UP  &kp C_MUTE  &kp C_VOL_DN    &kp C_VOL_UP       &connect_WIN_K
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &bootloader        &bootloader   &none        &kp C_PP     &kp C_PREV      &kp C_NEXT         &lock_WIN_L
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp PAUSE_BREAK    &none      &bt BT_CLR_ALL  &none        &none           &ext_power EP_OFF  &ext_power EP_ON
+                 &kp LGUI  &kp SLCK        &none             &trans       &trans       &kp RALT
             >;
         };
     };
