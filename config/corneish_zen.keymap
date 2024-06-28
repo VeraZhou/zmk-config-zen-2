@@ -76,6 +76,17 @@
                 , <&macro_release &kp LGUI>
                 ;
         };
+        macro_test: macro_test {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHIFT>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(360,90,25)>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp LSHIFT>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                ;
+        };
     };
 
     keymap {
