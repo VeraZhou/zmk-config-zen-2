@@ -102,10 +102,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &bt BT_CLR_ALL>
+                = <&macro_press &bootloader>
                 , <&macro_tap &rgb_ug RGB_COLOR_HSB(360,100,20)>
 		, <&macro_pause_for_release>
-                , <&macro_release &bt BT_CLR_ALL>
+                , <&macro_release &bootloader>
 		, <&macro_tap &rgb_ug RGB_COLOR_HSB(335,75,10)>
                 ;
         };
@@ -113,10 +113,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &bt BT_CLR_ALL>
+                = <&macro_press &sys_reset>
                 , <&macro_tap &rgb_ug RGB_COLOR_HSB(360,100,20)>
 		, <&macro_pause_for_release>
-                , <&macro_release &bt BT_CLR_ALL>
+                , <&macro_release &sys_reset>
 		, <&macro_tap &rgb_ug RGB_COLOR_HSB(335,75,10)>
                 ;
         };
