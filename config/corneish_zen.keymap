@@ -78,6 +78,92 @@
         };
     };
 
+//不同按键行为导致的背光变化
+    macros {
+//按修饰键时亮度增加
+        ctrl_pink_bri: ctrl_pink_bri {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(340 ,80,35)>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp LCTRL>
+                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                ;
+        };
+        shift_pink_bri: shift_pink_bri {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHIFT>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(340 ,80,35)>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp LSHIFT>
+                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                ;
+        };
+        gui_pink_bri: gui_pink_bri {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(340 ,80,35)>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp LGUI>
+                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                ;
+        };
+        alt_pink_bri: alt_pink_bri {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(340 ,80,35)>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp RALT>
+                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                ;
+        };
+//切layer1背光变黄色
+        layer1_yellow: layer1_yellow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &mo 1>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(20,100,30)>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo 1>
+                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                ;
+        };
+//切layer2变浅绿
+        layer2_green: layer2_green {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &mo 1>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(55,65,20)>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo 1>
+                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                ;
+        };
+//切layer3变白光
+        layer3_white: layer3_white {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &mo 1>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(55,0,20)>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo 1>
+                , <&macro__release &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                ;
+        };
+    };
+
+//正式键盘布局
     keymap {
         compatible = "zmk,keymap";
 
