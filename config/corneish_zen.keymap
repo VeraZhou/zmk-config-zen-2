@@ -73,6 +73,18 @@
 //背光变化设定
 / {
     macros {
+//切layer1背光变黄色
+        layer1_yellow: layer1_yellow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &mo 1>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(20,100,30)>
+		, <&macro_pause_for_release>
+                , <&macro_release &mo 1>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                ;
+        };
 //蓝牙清空变浅红色
         btclrall_red: btclrall_red {
             compatible = "zmk,behavior-macro";
