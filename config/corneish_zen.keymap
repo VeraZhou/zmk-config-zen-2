@@ -76,6 +76,8 @@
                 , <&macro_release &kp LGUI>
                 ;
         };
+    };
+};
 /*
 //切layer1背光变黄色
         layer1_yellow: layer1_yellow {
@@ -91,17 +93,20 @@
         };
 */
 //其他宏测试
+/{
+    macros {
         macro_test: macro_test {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LSHIFT>
                 , <&macro_tap &kp T &kp E &kp S &kp T>
-                , <&macro__release &kp LSHIFT>
+                , <&macro_release &kp LSHIFT>
                 ;
         };
-
     };
+};
+/{
     keymap {
         compatible = "zmk,keymap";
 
