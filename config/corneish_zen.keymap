@@ -75,6 +75,7 @@
     macros {
         mo1_yellow: mo1_yellow {
             compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
             bindings
@@ -87,6 +88,7 @@
         };
         mo2_green: mo2_green {
             compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
             bindings
