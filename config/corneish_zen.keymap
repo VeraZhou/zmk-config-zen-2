@@ -75,7 +75,8 @@
     macros {
         mo1_yellow: mo1_yellow {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
             bindings
                 = <&macro_tap &rgb_ug RGB_COLOR_HSB(20,95,30)>
                 , <&macro_press &mo 1>
@@ -86,7 +87,8 @@
         };
         mo2_green: mo2_green {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
             bindings
                 = <&macro_tap &rgb_ug RGB_COLOR_HSB(55,65,20)>
                 , <&macro_press &mo 2>
