@@ -78,7 +78,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &mo 1>
-                , <&macro_tap &rgb_ug RGB_COLOR_HSB(20,90,30)>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(20,95,30)>
                 , <&macro_pause_for_release>
                 , <&macro_release &mo 1>
                 , <&macro_tap &rgb_ug RGB_COLOR_HSB(335,75,10)>
