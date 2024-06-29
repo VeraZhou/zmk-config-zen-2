@@ -188,7 +188,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD0";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+            bindings = <&shift_pink_bri>, <&kp CAPS>;
         };
     };
 };
