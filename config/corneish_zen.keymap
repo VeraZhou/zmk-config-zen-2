@@ -73,6 +73,52 @@
 //背光变化设定
 / {
     macros {
+//按修饰键亮度增加
+        ctrl_pink_bri: ctrl_pink_bri {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(340 ,80,35)>
+		, <&macro_pause_for_release>
+                , <&macro_release &kp LCTRL>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                ;
+        };
+        shift_pink_bri: shift_pink_bri {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHIFT>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(340 ,80,35)>
+		, <&macro_pause_for_release>
+                , <&macro_release &kp LSHIFT>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                ;
+        };
+        gui_pink_bri: gui_pink_bri {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(340 ,80,35)>
+		, <&macro_pause_for_release>
+                , <&macro_release &kp LGUI>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                ;
+        };
+        alt_pink_bri: alt_pink_bri {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(340 ,80,35)>
+		, <&macro_pause_for_release>
+                , <&macro_release &kp RALT>
+		, <&macro_tap &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                ;
+        };
+
 //切layer1背光变黄色
         layer1_yellow: layer1_yellow {
             compatible = "zmk,behavior-macro";
@@ -136,7 +182,6 @@
     };	
 };
 
-
 / {
     behaviors {
         td0: td0 {
@@ -164,8 +209,8 @@
             bindings = <
 &kp TAB     &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &td0        &kp A  &kp S  &kp D     &kp F  &kp G          &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp DQT
-&kp LCTRL   &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
-                         &kp LGUI  &layer1_yellow  &kp SPACE      &lt 3 ENTER  &layer2_green   &kp RALT
+&ctrl_pink_bri   &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
+                         &gui_pink_bri  &layer1_yellow  &kp SPACE      &lt 3 ENTER  &layer2_green   &alt_pink_bri
             >;
         };
 
