@@ -154,12 +154,19 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &rgb_ug RGB_COLOR_HSB(55,0,20)>
-                , <&macro_press &mo 3>
+                = <&macro_press &mo 3>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(55,0,20)>
                 , <&macro_pause_for_release>
                 , <&macro_release &mo 3>
                 , <&macro_tap &rgb_ug RGB_COLOR_HSB(335,75,10)>
                 ;
+        };
+        mo3white_enter: mo3white_enter {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo3_white>, <&kp ENTER>;
         };
     };
 };
@@ -171,13 +178,6 @@
             label = "TD0";
             #binding-cells = <0>;
             bindings = <&shift_pink_bri>, <&caps_pink_bri>;
-        };
-        mo3white_enter: mo3white_enter {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo3_white>, <&kp ENTER>;
         };
     };
 };
