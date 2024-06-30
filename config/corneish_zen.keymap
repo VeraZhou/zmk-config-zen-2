@@ -219,7 +219,7 @@
 
             bindings = <
 &trans  &kp TILDE  &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp LPAR   &kp RPAR   &kp UP    &kp MINUS  &kp UNDER  &kp PLUS
-&trans  &kp GRAVE  &kp PRCNT  &kp AMPS  &kp CARET  &kp STAR              &kp PG_UP  &kp LEFT   &kp DOWN   &kp RIGHT  &kp COLON  &kp SQT
+&trans  &kp GRAVE  &kp PRCNT  &kp CARET  &kp AMPS  &kp STAR              &kp PG_UP  &kp LEFT   &kp DOWN   &kp RIGHT  &kp COLON  &kp SQT
 &trans  &kp PIPE   &kp LBRC  &kp RBRC  &rgb_ug RGB_ON  &rgb_ug RGB_OFF   &kp PG_DN  &kp LT     &kp GT     &kp HOME   &kp QMARK  &kp END
                              &trans  &trans   &menu_LS_F10        &kp PSCRN  &kp DEL  &trans
             >;
