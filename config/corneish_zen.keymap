@@ -175,13 +175,6 @@
             #binding-cells = <0>;
             bindings = <&shift_pink_bri>, <&caps_pink_bri>;
         };
-//双击win，单击P方便编曲
-        td1: td1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD0";
-            #binding-cells = <0>;
-            bindings = <&kp P>, <&gui_pink_bri>;
-        };
 /*
         mo3white_enter: mo3white_enter {
             compatible = "zmk,behavior-hold-tap";
@@ -211,7 +204,7 @@
 &kp TAB     &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &td0        &kp A  &kp S  &kp D     &kp F  &kp G          &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp DQT
 &ctrl_pink_bri   &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
-                        &td1  &mo1_yellow  &kp SPACE      &lt 3 ENTER  &mo2_green   &alt_pink_bri
+                        &gui_pink_bri  &mo1_yellow  &kp SPACE      &lt 3 ENTER  &mo2_green   &alt_pink_bri
                         //&gui_pink_bri  &mo1_yellow  &kp SPACE      &mo3white_enter   &mo2_green   &alt_pink_bri
             >;
         };
@@ -225,11 +218,23 @@
             // | CTRL |  |  |  {  |  }  |RGB开|RGB关|   |PGDN |  <  |  >  |HOME |  ?  | END  |
             //               | GUI |     | 鼠标右键 |   |PRTSCR| DEL | RALT |
 
+
+            // -----------------------------------------------------------------------------------------
+            // |  ALT |  Y  |  M  |  ↑  |  P  |PGUP |   |  (  |  )  |  ↑  |  -  |  _  |   +  |
+            // | SHFT |  F7 |  ←  |  ↓  |  →  |PGDN |   |  !  |  ←  |  ↓  |  →  |  :  |   '  |
+            // | CTRL |  F5 | F2 | F6 |RGB TOG|  *  |   |  @  |  $  |  ^  |HOME |  ?  | END  |
+            //               | DEL |     | 鼠标右键 |    |  #  |  %  |  &  |
+
             bindings = <
-&trans  &kp TILDE  &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp LPAR   &kp RPAR   &kp UP    &kp MINUS  &kp UNDER  &kp PLUS
-&kp LSHIFT &kp GRAVE  &kp PRCNT  &kp CARET  &kp AMPS  &kp STAR              &kp PG_UP  &kp LEFT   &kp DOWN   &kp RIGHT  &kp COLON  &kp SQT
-&trans  &kp PIPE   &kp LBRC  &kp RBRC  &rgb_ug RGB_ON  &rgb_ug RGB_OFF   &kp PG_DN  &kp LT     &kp GT     &kp HOME   &kp QMARK  &kp END
-                             &trans  &trans   &menu_LS_F10        &kp PSCRN  &kp DEL  &trans
+&alt_pink_bri     &kp Y   &kp M     &kp UP    &kp P            &kp PG_UP           &kp LPAR   &kp RPAR   &kp UP    &kp MINUS  &kp UNDER  &kp PLUS
+&shift_pink_bri   &kp F7  &kp LEFT  &kp DOWN  &kp RIGHT        &kp PG_DN           &kp EXCL   &kp LEFT   &kp DOWN   &kp RIGHT  &kp COLON  &kp SQT
+&trans            &kp F5  &kp F2    &kp F6    &rgb_ug RGB_TOG  &kp STAR            &kp AT     &kp DLLR   &kp CARET  &kp HOME   &kp QMARK  &kp END
+                             &kp DEL   &trans   &menu_LS_F10                       &kp HASH   &kp PRCNT  &kp AMPS
+
+//&trans  &kp TILDE  &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp LPAR   &kp RPAR   &kp UP    &kp MINUS  &kp UNDER  &kp PLUS
+//&kp LSHIFT &kp GRAVE  &kp PRCNT  &kp CARET  &kp AMPS  &kp STAR              &kp PG_UP  &kp LEFT   &kp DOWN   &kp RIGHT  &kp COLON  &kp SQT
+//&trans  &kp PIPE   &kp LBRC  &kp RBRC  &rgb_ug RGB_ON  &rgb_ug RGB_OFF   &kp PG_DN  &kp LT     &kp GT     &kp HOME   &kp QMARK  &kp END
+                            // &trans  &trans   &menu_LS_F10        &kp PSCRN  &kp DEL  &trans
             >;
         };
 
@@ -237,18 +242,16 @@
             display-name = "NUMBER";
 
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  [  |  ]   |      |RGB定1 |RGB定2 |RGB亮↓|RGB亮↑|RGB色↓|RGB色↑|
-            // | CTRL |  4  |  5  |  6  |  0  |资源管理器|   |RGB灯← | RGB灯→|RGB动↓|RGB动↑|RGB饱↓|RGB饱↑|
-            // | SHFT |  7  |  8  |  9  |  =  |任务管理器|   |蓝牙0  | 蓝牙1 |蓝牙2  |蓝牙3 |蓝牙4 |当前蓝牙清|
-            //                    | ESC | INS | SPACE |      |OUT_BLE|       |OUT_USB|
+            // |    |    |  1  |  2  |  3  |  [  |  ]   |      |RGB定1 |RGB定2 |RGB亮↓|RGB亮↑|RGB色↓|RGB色↑|
+            // |资源管理器|  4  |  5  |  6  |  0  |  =   |     |RGB灯← | RGB灯→|RGB动↓|RGB动↑|RGB饱↓|RGB饱↑|
+            // |任务管理器|  7  |  8  |  9  |  <  |  >   |     |蓝牙0  | 蓝牙1 |蓝牙2  |蓝牙3 |蓝牙4 |当前蓝牙清|
+            //                    |  {  |  }    | SPACE |      |OUT_BLE|       |OUT_USB|
 
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp LBKT   &kp RBKT                   &rgb_ug RGB_COLOR_HSB(55,65,20)  &rgb_ug RGB_COLOR_HSB(335,75,10)  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI
-//&trans  &kp N1  &kp N2  &kp N3  &kp LBKT   &kp RBKT        &none &none &none &none &none &none
-&trans  &kp N4  &kp N5  &kp N6  &kp N0     &resource_WIN_E            &rgb_ug RGB_EFR                  &rgb_ug RGB_EFF  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI
-//&trans  &kp N4  &kp N5  &kp N6  &kp N0     &resource_WIN_E &none &none &none &none &none &none
-&trans  &kp N7  &kp N8  &kp N9  &kp EQUAL  &task_LC_LS_ESC            &bt BT_SEL 0                     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &bt BT_CLR
-                     &kp ESC  &kp INS  &kp SPACE                      &out OUT_BLE                     &trans           &out OUT_USB
+&kp PIPE          &kp N1  &kp N2  &kp N3  &kp LBKT   &kp RBKT         &rgb_ug RGB_COLOR_HSB(55,65,20)  &rgb_ug RGB_COLOR_HSB(335,75,10)  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI
+&resource_WIN_E  &kp N4  &kp N5  &kp N6  &kp N0     &kp EQUAL         &rgb_ug RGB_EFR                  &rgb_ug RGB_EFF  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI
+&task_LC_LS_ESC  &kp N7  &kp N8  &kp N9  &kp LT     &kp GT            &bt BT_SEL 0                     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &bt BT_CLR
+                     &kp LBRC  &kp RBRC  &kp SPACE                      &out OUT_BLE                     &trans           &out OUT_USB
             >;
         };
 
@@ -256,16 +259,16 @@
             display-name = "Fn";
 
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  F1  |  F2  |  F3  |  F4  |SYS RESET |     |   亮度↓   | 亮度↑| 静音 | 音量- | 音量+ | 连设备win+k |
-            // | CTRL |  F5  |  F6  |  F7  |  F8  |BOOTLOADER|     |BOOTLOADER |     | 暂停 |上一曲 | 下一曲|  锁定win+L |
-            // | SHFT |  F9  |  F10 |  F11 |  F12 |PAUSE BREAK|    |          |蓝牙全清|     |       | 禁用外部电源 |启用外部电源|
-            //                      | GUI  |SCRLK  |        |      |&trans|      |Alt|
+            // | ESC  |  F1  |  F2  |  F3  |  F4  |SYS RESET |     |SYS RESET  |   亮度↓  | 亮度↑| 音量-       | 音量+       |   静音 |
+            // |  SHIFT|  F5  |  F6  |  F7  |  F8  |BOOTLOADER|     |BOOTLOADER |  暂停    | 上一曲 | 下一曲| 连设备win+k |  锁定win+L |
+            // | CTRL |  F9  |  F10 |  F11 |  F12 |  INS    |     |蓝牙全清   |         | PAUSE BREAK | SCRLK | 禁用外部电源 |启用外部电源|
+            //                      |  `  |  ~   | 截图   |      |&trans| GUI |Alt|
 
             bindings = <
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &sys_reset         &kp C_BRI_DN  &kp C_BRI_UP  &kp C_MUTE  &kp C_VOL_DN    &kp C_VOL_UP       &connect_WIN_K
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &bootloader        &bootloader   &none        &kp C_PP     &kp C_PREV      &kp C_NEXT         &lock_WIN_L
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp PAUSE_BREAK    &none      &bt BT_CLR_ALL  &none        &none           &ext_power EP_OFF  &ext_power EP_ON
-                 &kp LGUI  &kp SLCK        &none             &trans       &trans       &kp RALT
+&kp ESC &kp F1  &kp F2   &kp F3   &kp F4   &sys_reset                  &sys_reset    &kp C_BRI_DN  &kp C_BRI_UP   &kp C_VOL_DN    &kp C_VOL_UP  &kp C_MUTE         
+&shift_pink_bri  &kp F5  &kp F6   &kp F7   &kp F8   &bootloader        &bootloader   &kp C_PP      &kp C_PREV    &kp C_NEXT   &connect_WIN_K   &lock_WIN_L
+&ctrl_pink_bri  &kp F9  &kp F10  &kp F11  &kp F12  &kp INS            &bt BT_CLR_ALL  &none      &kp PAUSE_BREAK     &kp SLCK     &ext_power EP_OFF  &ext_power EP_ON
+                 &kp GRAVE  &kp TILDE     &kp PSCRN                   &trans       &gui_pink_bri       &alt_pink_bri
             >;
         };
     };
