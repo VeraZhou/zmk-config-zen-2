@@ -222,13 +222,13 @@
             // -----------------------------------------------------------------------------------------
             // |  ALT |  Y  |  M  |  ↑  |  P  |PGUP |   |  (  |  )  |  ↑  |  -  |  _  |   +  |
             // | SHFT |  F7 |  ←  |  ↓  |  →  |PGDN |   |  !  |  ←  |  ↓  |  →  |  :  |   '  |
-            // | CTRL |  F5 | F2 | F6 |RGB TOG|  *  |   |  @  |  $  |  ^  |HOME |  ?  | END  |
+            // | CTRL |  N | F2 | F6 |RGB TOG|  *  |   |  @  |  $  |  ^  |HOME |  ?  | END  |
             //               | DEL |     | 鼠标右键 |    |  #  |  %  |  &  |
 
             bindings = <
 &alt_pink_bri     &kp Y   &kp M     &kp UP    &kp P            &kp PG_UP           &kp LPAR   &kp RPAR   &kp UP    &kp MINUS  &kp UNDER  &kp PLUS
 &shift_pink_bri   &kp F7  &kp LEFT  &kp DOWN  &kp RIGHT        &kp PG_DN           &kp EXCL   &kp LEFT   &kp DOWN   &kp RIGHT  &kp COLON  &kp SQT
-&trans            &kp F5  &kp F2    &kp F6    &rgb_ug RGB_TOG  &kp STAR            &kp AT     &kp DLLR   &kp CARET  &kp HOME   &kp QMARK  &kp END
+&trans            &kp N   &kp F2    &kp F6    &rgb_ug RGB_TOG  &kp STAR            &kp AT     &kp DLLR   &kp CARET  &kp HOME   &kp QMARK  &kp END
                              &kp DEL   &trans   &menu_LS_F10                       &kp HASH   &kp PRCNT  &kp AMPS
 
 //&trans  &kp TILDE  &kp EXCL   &kp AT    &kp HASH   &kp DLLR              &kp LPAR   &kp RPAR   &kp UP    &kp MINUS  &kp UNDER  &kp PLUS
