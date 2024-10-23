@@ -222,8 +222,8 @@
 &kp TAB     &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &td0        &kp A  &kp S  &kp D     &kp F  &kp G          &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp DQT
 &ctrl_pink_bri   &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
-                        &gui_pink_bri  &mo1_yellow  &kp SPACE      &lt 3 ENTER  &mo2_green   &alt_pink_bri
-                        //&gui_pink_bri  &mo1_yellow  &kp SPACE      &mo3white_enter   &mo2_green   &alt_pink_bri
+                        //&gui_pink_bri  &mo1_yellow  &kp SPACE      &lt 3 ENTER  &mo2_green   &alt_pink_bri
+                        &gui_pink_bri  &mo1_yellow  &kp SPACE      &mo3white_enter   &mo2_pink   &alt_pink_bri
             >;
         };
 
@@ -266,7 +266,7 @@
             //                    |  {  |  }    | SPACE |      |OUT_BLE|       |OUT_USB|
 
             bindings = <
-&kp PIPE          &kp N1  &kp N2  &kp N3  &kp LBKT   &kp RBKT         &rgb_ug RGB_COLOR_HSB(55,65,20)  &rgb_ug RGB_COLOR_HSB(335,75,10)  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI
+&kp PIPE          &kp N1  &kp N2  &kp N3  &kp LBKT   &kp RBKT         &rgb_ug RGB_COLOR_HSB(230,45,15)  &rgb_ug RGB_COLOR_HSB(335,75,10)  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI
 &resource_WIN_E  &kp N4  &kp N5  &kp N6  &kp N0     &kp EQUAL         &rgb_ug RGB_EFR                  &rgb_ug RGB_EFF  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI
 &task_LC_LS_ESC  &kp N7  &kp N8  &kp N9  &kp LT     &kp GT            &bt BT_SEL 0                     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &bt BT_CLR
                      &kp LBRC  &kp RBRC  &kp SPACE                      &out OUT_BLE                     &trans           &out OUT_USB
