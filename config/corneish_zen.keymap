@@ -85,11 +85,25 @@
                 , <&macro_tap &rgb_ug RGB_COLOR_HSB(230,45,15)>
                 ;
         };
+/*
         mo2_green: mo2_green {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &rgb_ug RGB_COLOR_HSB(55,65,20)>
+                , <&macro_press &mo 2>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo 2>
+//粉                , <&macro_tap &rgb_ug RGB_COLOR_HSB(335,75,10)>
+                , <&macro_tap &rgb_ug RGB_COLOR_HSB(230,45,15)>
+                ;
+        };
+*/
+        mo2_pink: mo2_pink {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &rgb_ug RGB_COLOR_HSB(345,75,20)>
                 , <&macro_press &mo 2>
                 , <&macro_pause_for_release>
                 , <&macro_release &mo 2>
