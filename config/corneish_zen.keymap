@@ -67,6 +67,15 @@
                 , <&macro_release &kp LGUI>
                 ;
         };
+        sleep_ALT_F4: sleep_ALT_F4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp F4>
+                , <&macro_release &kp LALT>
+                ;
+        };
     };
 };
 
@@ -279,13 +288,13 @@
             // -----------------------------------------------------------------------------------------
             // | ESC  |  F1  |  F2  |  F3  |  F4  |SYS RESET |     |SYS RESET  |   亮度↓  | 亮度↑| 音量-       | 音量+       |   静音 |
             // |  SHIFT|  F5  |  F6  |  F7  |  F8  |BOOTLOADER|     |BOOTLOADER |  暂停    | 上一曲 | 下一曲| 连设备win+k |  锁定win+L |
-            // | CTRL |  F9  |  F10 |  F11 |  F12 |  INS    |     |蓝牙全清   |         | PAUSE BREAK | SCRLK | 禁用外部电源 |启用外部电源|
-            //                      |  `  |  ~   | 截图   |      |&trans| GUI |Alt|
+            // | CTRL |  F9  |  F10 |  F11 |  F12 |  INS    |      |蓝牙全清     |  睡眠   | PAUSE BREAK | SCRLK | 禁用外部电源 |启用外部电源|
+            //                      |  `  |  ~   | 截图   |         |&trans| GUI |Alt|
 
             bindings = <
 &kp ESC &kp F1  &kp F2   &kp F3   &kp F4   &sys_reset                  &sys_reset    &kp C_BRI_DN  &kp C_BRI_UP   &kp C_VOL_DN    &kp C_VOL_UP  &kp C_MUTE         
 &shift_pink_bri  &kp F5  &kp F6   &kp F7   &kp F8   &bootloader        &bootloader   &kp C_PP      &kp C_PREV    &kp C_NEXT   &connect_WIN_K   &lock_WIN_L
-&ctrl_pink_bri  &kp F9  &kp F10  &kp F11  &kp F12  &kp INS            &bt BT_CLR_ALL  &none      &kp PAUSE_BREAK     &kp SLCK     &ext_power EP_OFF  &ext_power EP_ON
+&ctrl_pink_bri  &kp F9  &kp F10  &kp F11  &kp F12  &kp INS            &bt BT_CLR_ALL  &sleep_ALT_F4      &kp PAUSE_BREAK     &kp SLCK     &ext_power EP_OFF  &ext_power EP_ON
                  &kp GRAVE  &kp TILDE     &kp PSCRN                   &trans       &gui_pink_bri       &alt_pink_bri
             >;
         };
