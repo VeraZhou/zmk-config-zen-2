@@ -195,12 +195,12 @@
 
 / {
     behaviors {
-//单击Ctrl双击CAPS
+//单击tab双击CAPS
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD0";
             #binding-cells = <0>;
-            bindings = <&ctrl_pink_bri>, <&caps_pink_bri>;
+            bindings = <&kp TAB>, <&caps_pink_bri>;
         };
 /*
         mo3white_enter: mo3white_enter {
@@ -228,9 +228,9 @@
             //                    | GUI | LWL | SPC |   | L3+EBTER | LAYER2| RALT |
 
             bindings = <
-&kp TAB     &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&td0     &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &shift_pink_bri    &kp A  &kp S  &kp D     &kp F  &kp G          &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp DQT
-&td0   &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
+&ctrl_pink_bri   &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
                         //&gui_pink_bri  &mo1_yellow  &kp SPACE      &lt 3 ENTER  &mo2_green   &alt_pink_bri
                         &gui_pink_bri  &mo1_yellow  &kp SPACE      &lt 3 ENTER   &mo2_pink   &alt_pink_bri
             >;
