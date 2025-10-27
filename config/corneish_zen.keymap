@@ -83,7 +83,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp U &kp N0 &kp N0 &kp N3 &kp N0 &kp N0 &kp C>
+                , <&macro_tap &kp U &kp N3 &kp N0 &kp N0 &kp C>
                 , <&macro_release &kp LSHFT>
                 ;
         };
@@ -94,7 +94,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp U &kp N0 &kp N0 &kp N3 &kp N0 &kp N0 &kp D>
+                , <&macro_tap &kp U &kp N3 &kp N0 &kp N0 &kp D>
                 , <&macro_release &kp LSHFT>
                 ;
         };
