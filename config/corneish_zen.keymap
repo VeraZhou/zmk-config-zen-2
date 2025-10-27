@@ -254,7 +254,7 @@
 &shift_pink_bri    &kp A  &kp S  &kp D     &kp F  &kp G          &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp DQT
 &ctrl_pink_bri   &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
                         //&gui_pink_bri  &mo1_yellow  &kp SPACE      &lt 3 ENTER  &mo2_green   &alt_pink_bri
-                        &gui_pink_bri  &kp SPACE  &mo1_yellow	     &lt 3 ENTER   &mo2_pink   &alt_pink_bri
+                        &gui_pink_bri  &mo1_yellow  &kp SPACE	     &lt 3 ENTER   &mo2_pink   &alt_pink_bri
             >;
         };
 
