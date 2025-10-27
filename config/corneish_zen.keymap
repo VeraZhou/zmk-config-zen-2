@@ -222,17 +222,17 @@
             display-name = "QWERTY";
 
             // --------------------------------------------------------------------------------
-            // | SHFT |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // |  SPC |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  "   | 
+            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+            // |  SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  "   | 
             // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |  \   |
-            //                    | GUI | LWL | TAB |   | L3+EBTER | LAYER2| RALT |
+            //                    | LAYER1 | SPC | WIN |   | L3+EBTER | LAYER2| RALT |
 
             bindings = <
-&shift_pink_bri     &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp SPACE    &kp A  &kp S  &kp D     &kp F  &kp G          &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp DQT
+&td0     &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&shift_pink_bri    &kp A  &kp S  &kp D     &kp F  &kp G          &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp DQT
 &ctrl_pink_bri   &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BSLH
                         //&gui_pink_bri  &mo1_yellow  &kp SPACE      &lt 3 ENTER  &mo2_green   &alt_pink_bri
-                        &gui_pink_bri  &mo1_yellow  &td0	     &lt 3 ENTER   &mo2_pink   &alt_pink_bri
+                        &gui_pink_bri  &kp SPACE  &mo1_yellow	     &lt 3 ENTER   &mo2_pink   &alt_pink_bri
             >;
         };
 
