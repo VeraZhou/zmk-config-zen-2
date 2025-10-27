@@ -76,6 +76,28 @@
                 , <&macro_release &kp LALT>
                 ;
         };
+//「
+        macro_quotes_left: macro_quotes_left {
+            compatible = "zmk,behavior-macro";
+            label = " MQL";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp U &kp N0 &kp N0 &kp N3 &kp N0 &kp N0 &kp C>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+//」
+        macro_quotes_right: macro_quotes_right {
+            compatible = "zmk,behavior-macro";
+            label = " MQR";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp U &kp N0 &kp N0 &kp N3 &kp N0 &kp N0 &kp D>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
     };
 };
 
@@ -287,8 +309,8 @@
 
             // -----------------------------------------------------------------------------------------
             // | ESC  |  F1  |  F2  |  F3  |  F4  |SYS RESET |     |SYS RESET  |   亮度↓  | 亮度↑| 音量-       | 音量+       |   静音 |
-            // |  SHIFT|  F5  |  F6  |  F7  |  F8  |BOOTLOADER|     |BOOTLOADER |  暂停    | 上一曲 | 下一曲| 连设备win+k |  锁定win+L |
-            // | CTRL |  F9  |  F10 |  F11 |  F12 |  INS    |      |蓝牙全清     |  睡眠   | PAUSE BREAK | SCRLK | 禁用外部电源 |启用外部电源|
+            // |  「|  F5  |  F6  |  F7  |  F8  |BOOTLOADER|     |BOOTLOADER |  暂停    | 上一曲 | 下一曲| 连设备win+k |  锁定win+L |
+            // | 」 |  F9  |  F10 |  F11 |  F12 |  INS    |      |蓝牙全清     |  睡眠   | PAUSE BREAK | SCRLK | 禁用外部电源 |启用外部电源|
             //                      |  `  |  ~   | 截图   |         |&trans| GUI |Alt|
 
             bindings = <
